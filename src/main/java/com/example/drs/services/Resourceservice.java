@@ -15,6 +15,7 @@ public interface Resourceservice {
 	public Resources updateByIdResources(Resources resource,long resourceId);
 	public List<Resources> findPocResources(Integer poc_id);
 	public List<Booking> findBookingResources(Integer poc_id);
+	public List<Resources> findAvbResources(Integer stime,String spec,String value,Integer did);
 	
 
 }

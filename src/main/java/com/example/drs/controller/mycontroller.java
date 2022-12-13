@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +21,7 @@ import com.example.drs.entity.Resources;
 import com.example.drs.services.Resourceservice;
 
 @RestController
+@CrossOrigin
 public class mycontroller {
 
 	@Autowired
@@ -40,6 +42,12 @@ public class mycontroller {
 	@GetMapping("/Resources_poc")
 	public List<Resources> findPocResources(@RequestParam("poc_id")Integer poc_id){
 		return this.resourceservice.findPocResources(poc_id);
+	}
+	
+	@GetMapping("/get_avb_resource")
+	public List<Resources> findAvbResources(@RequestParam ("stime")Integer stime , @RequestParam ("spec") String spec,@RequestParam ("value") String value, @RequestParam ("did") Integer did)
+	{
+		return this.resourceservice.findAvbResources(stime, spec, value, did);
 	}
 	
 	@GetMapping("/Booking_Resources_poc")

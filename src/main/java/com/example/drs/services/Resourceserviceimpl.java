@@ -67,6 +67,11 @@ public class Resourceserviceimpl implements Resourceservice {
 	public List<Booking> findBookingResources(Integer poc_id) {
 		return bookingdao.findBookingResources(poc_id);
 	}
+	@Override
+	public List<Resources> findAvbResources(Integer stime, String spec, String value, Integer did) {
+		
+		return resourcedao.findAvbResources(stime, spec, value, did);
+	}
 	
 
 }
