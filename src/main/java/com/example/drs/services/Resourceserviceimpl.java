@@ -43,7 +43,8 @@ public class Resourceserviceimpl implements Resourceservice {
 	}
 	@Override
 	public Resources deleteResources(long resourceId) {
-		// TODO Auto-generated method stub
+		Resources entity=resourcedao.getOne(resourceId);
+		resourcedao.delete(entity);
 		return null;
 	}
 	@Override
