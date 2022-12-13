@@ -22,6 +22,7 @@ import com.example.drs.services.POCService;
 import com.example.drs.services.ResourceHubservice;
 
 @RestController
+@CrossOrigin
 public class POCController {
 	@Autowired
 	private POCService pocService;
